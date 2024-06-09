@@ -95,7 +95,7 @@ public abstract class AbstractContainerMenuMixin implements ContainerBridge {
 
     public Component getTitle() {
         if (this.title == null) {
-            if (this.menuType != null) {
+            if (this.menuType != null && BuiltInRegistries.MENU.getKey(this.menuType) != null) {
                 var key = ForgeRegistries.MENU_TYPES.getKey(this.menuType);
                 return Component.translatable(key.toString());
             } else {
